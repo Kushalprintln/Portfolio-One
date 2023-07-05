@@ -307,8 +307,25 @@ body{
 .skills{
     padding: 20px 10%;
     background-color: #e6e6e6;
-
 }
+.skill-container-one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.skill-card{
+    width: 250px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.skill-card img{
+    width: 100%;
+}
+
 
 
 /* -----ALL ANIMATIONS-------- */
