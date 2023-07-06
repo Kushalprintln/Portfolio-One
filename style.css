@@ -315,15 +315,68 @@ body{
     flex-wrap: wrap;
 }
 .skill-card{
-    width: 250px;
+    width: 200px;
     text-align: center;
     margin: 10px;
     padding: 10px;
     border-radius: 30px;
 }
-
 .skill-card img{
     width: 100%;
+}
+.projects{
+    background-color: #192248;
+    color: #fff;
+    padding: 20px 10%;
+}
+.procard{
+    position: relative;
+    display: flex;
+    padding: 10px;
+    background: yellowgreen;
+    border-radius: 30px;
+}
+.procard span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, red, orange);
+    border-radius: 30px;
+}
+.procard span:nth-child(1){
+    filter: blur(10px);
+}
+.innercard{
+    padding: 10px;
+    background-color: #192248;
+    z-index: 3;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact{
+    padding:20px 10%;
 }
 
 
