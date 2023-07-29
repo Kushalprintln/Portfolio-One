@@ -265,6 +265,8 @@ body{
 .about-content{
     width: 70%;
     padding: 30px;
+    text-align: center;
+    line-height: 2;
 }
 .res-btn{
     padding: 20px;
@@ -383,6 +385,20 @@ body{
     background-size: cover;
     transition: all 1s ease-in-out;
 }
+.pro-links{
+    text-align: center;
+    margin: 20px;
+}
+.pro-links a{
+    font-size: 18px;
+    background-color: red;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+}
 .one::before{
     background-image: url(./gymwebsiteImage.png);
 }
@@ -410,11 +426,20 @@ body{
 .con-icon{
     text-align: center;
 }
+.con-icon a{
+    font-size: 35px;
+    color: #0c1022;
+}
+.con-icon a:hover{
+    color: green;
+}
 form{
     width: 50%;
     padding: 10px;
     background-color: #e6e6e6;
     border-radius: 15px;
+    display: block;
+    flex-direction: column;
 }
 .contact_container{
     width: 50%;
@@ -431,6 +456,22 @@ input,textarea{
 }
 textarea{
     height: 260px;
+}
+#sub-btn{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 48px;
+    font-size: 19px;
+    color: #fff;
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    margin: 0 auto;
 }
 
 
