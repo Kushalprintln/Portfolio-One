@@ -328,8 +328,12 @@ body{
     background-color: #192248;
     color: #fff;
     padding: 20px 10%;
+/* ----- */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.procard{
+/* .procard{
     position: relative;
     display: flex;
     padding: 10px;
@@ -354,30 +358,81 @@ body{
     z-index: 3;
     border-radius: 30px;
     padding: 30px;
+} */
+.proj-card{
+    padding: 20px;
+
+    border-radius: 30px;
+}
+.pro-details{
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    /* border: 2px solid; */
+    position: relative;
+    transition: all 1s ease-in-out
+}
+.pro-details::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background-size: cover;
+    transition: all 1s ease-in-out;
+}
+.one::before{
+    background-image: url(./gymwebsiteImage.png);
+}
+.two::before{
+    background-image: url(./car-gc31eed029_1920.jpg);
+}
+.proj-card:nth-child(odd):hover .pro-details{
+    transform: translateX(50%);
+}
+.proj-card:nth-child(odd):hover .pro-details::before{
+    transform: translateX(-100%);
+}
+.proj-card:nth-child(even):hover .pro-details{
+    transform: translateX(-50%);
+}
+.proj-card:nth-child(even):hover .pro-details::before{
+    transform: translateX(100%);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*  CONTACT SECTION */
 .contact{
-    padding:20px 10%;
+    padding:50px 10%;
+    display: flex;
 }
+.con-icon{
+    text-align: center;
+}
+form{
+    width: 50%;
+    padding: 10px;
+    background-color: #e6e6e6;
+    border-radius: 15px;
+}
+.contact_container{
+    width: 50%;
+    line-height: 2;
+    font-size: 30px;
+}
+input,textarea{
+    width: 97%;
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+}
+textarea{
+    height: 260px;
+}
+
 
 
 
