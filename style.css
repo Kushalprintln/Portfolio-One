@@ -397,9 +397,13 @@ h1{
     background-size: cover;
     transition: all 1s ease-in-out;
 }
+.proj-card ul{
+    margin: 5px 0px;
+    padding: 0px 15px;
+}
 .pro-links{
     text-align: center;
-    margin: 20px;
+    margin: 10px;
 }
 .pro-links a{
     font-size: 18px;
@@ -412,10 +416,13 @@ h1{
     border: 2px solid white;
 }
 .one::before{
-    background-image: url(./gymwebsiteImage.png);
+    background-image: url(./PojectImages/MovieDock.png);
 }
 .two::before{
-    background-image: url(./car-gc31eed029_1920.jpg);
+    background-image: url(./PojectImages/Dictionary.png);
+}
+.three::before{
+    background-image: url(./PojectImages/Music.png);
 }
 .proj-card:nth-child(odd):hover .pro-details{
     transform: translateX(50%);
