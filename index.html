@@ -1,227 +1,1066 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="./professional-portfolio.png" type="image/x-icon">
+    <title>Kushal S Sonkamble | Full Stack Developer</title>
+    <meta name="description" content="Professional portfolio of Kushal S Sonkamble, Full Stack Developer">
+
+    <!-- Favicon Links -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text x='50' y='68' font-family='Inter' font-size='60' text-anchor='middle' fill='white'>KS</text></svg>">
+
+    <!-- Tailwind CSS CDN with custom config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#6366f1',
+                            dark: '#818cf8'
+                        },
+                        secondary: {
+                            light: '#f43f5e',
+                            dark: '#fb7185'
+                        },
+                        accent: {
+                            light: '#10b981',
+                            dark: '#34d399'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient-x': 'gradientX 15s ease infinite',
+                        'gradient-y': 'gradientY 15s ease infinite',
+                        'gradient-xy': 'gradientXY 15s ease infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradientX: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        gradientY: {
+                            '0%, 100%': { 'background-position': '50% 0%' },
+                            '50%': { 'background-position': '50% 100%' },
+                        },
+                        gradientXY: {
+                            '0%, 100%': { 'background-position': '0% 0%' },
+                            '50%': { 'background-position': '100% 100%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
 </head>
-<body>
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-        <nav class="navbar">
-            <a href="#home" style="--i:1" class="active">Home</a>
-            <a href="#about" style="--i:2">About</a>
-            <a href="#skills" style="--i:3">Skills</a>
-            <a href="#project" style="--i:4">Projects</a>
-            <a href="#contact" style="--i:5">Contact</a>
-        </nav>
-        <a href="" class="hidemenu"><i class='bx bx-menu'></i></a>
-    </header>
 
-    <section class="home" id="home">
-        <div class="home-sci">
-            <a href="mailto:kushsonkamble@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
-            <a href="https://www.linkedin.com/in/kushal-sonkamble-4bb943264/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="https://github.com/Kushalprintln"><i class='bx bxl-github' ></i></a>
-        </div>
-        <div class="home-content">
-            <h1>Hi, I'm <br>Kushal Sonkamble</h1>
-            <h3>FullStack Developer</h3>
-            <p>Passionate creative mind and tech enthusiast, showcasing my love for design through digital art and user-centric experiences. Constantly seeking to push boundaries and craft compelling visuals that leave a lasting impact.</p>
-            <a href="#contact" class="btn">Hire me</a>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="#home"
+                        class="text-xl font-bold text-primary-light dark:text-primary-dark heading-font flex items-center">
+                        <span class="bg-primary-light dark:bg-primary-dark w-3 h-3 rounded-full mr-2"></span>
+                        Kushal S Sonkamble
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link relative group">
+                        <span>About</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-light dark:bg-primary-dark transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#experience" class="nav-link relative group">
+                        <span>Experience</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-light dark:bg-primary-dark transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#skills" class="nav-link relative group">
+                        <span>Skills</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-light dark:bg-primary-dark transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#projects" class="nav-link relative group">
+                        <span>Projects</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-light dark:bg-primary-dark transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="nav-link relative group">
+                        <span>Contact</span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-light dark:bg-primary-dark transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition transform hover:rotate-180 duration-500">
+                        <i data-lucide="sun" class="hidden dark:block w-5 h-5"></i>
+                        <i data-lucide="moon" class="dark:hidden w-5 h-5"></i>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <div class="home-img">
-            <div class="glowing-circle">
-                <span></span>
-                <span></span>
-                <div class="image">
-                    <img src="./profil pic.jpg" alt="">
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition">About</a>
+                <a href="#experience"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition">Experience</a>
+                <a href="#skills"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition">Skills</a>
+                <a href="#projects"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition">Projects</a>
+                <a href="#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition">Contact</a>
+                <button id="theme-toggle-mobile"
+                    class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    Toggle Theme
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div
+            class="absolute -top-64 -right-64 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-primary-light/10 to-secondary-light/10 dark:from-primary-dark/10 dark:to-secondary-dark/10 animate-spin-slow">
+        </div>
+        <div
+            class="absolute -bottom-96 -left-96 w-[1000px] h-[1000px] rounded-full bg-gradient-to-br from-primary-light/10 to-secondary-light/10 dark:from-primary-dark/10 dark:to-secondary-dark/10 animate-spin-slow-reverse">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="800">
+                    <div class="mb-6">
+                        <span
+                            class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark">
+                            Full Stack Developer
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 heading-font leading-tight">
+                        Hi, I'm <span class="text-primary-light dark:text-primary-dark">Kushal S Sonkamble</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+                        Crafting performant and user-friendly web applications with cutting-edge technologies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Email Button -->
+                        <a href="mailto:kushsonkamble@gmail.com" target="_blank"
+                            class="social-btn bg-gray-100 dark:bg-gray-800 hover:bg-primary-light dark:hover:bg-primary-dark text-gray-800 dark:text-gray-200 hover:text-white">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+
+                        <!-- LinkedIn Button -->
+                        <a href="https://www.linkedin.com/in/kushal-sonkamble-4bb943264/" target="_blank"
+                            class="social-btn bg-gray-100 dark:bg-gray-800 hover:bg-[#0A66C2] text-gray-800 dark:text-gray-200 hover:text-white">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+
+                        <!-- GitHub Button -->
+                        <a href="https://github.com/Kushalprintln" target="_blank"
+                            class="social-btn bg-gray-100 dark:bg-gray-800 hover:bg-gray-800 dark:hover:bg-gray-200 text-gray-800 dark:text-gray-200 hover:text-white dark:hover:text-gray-900">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <div class="mt-12 flex flex-col sm:flex-row gap-4">
+                        <!-- Get In Touch Button (Existing) -->
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark text-white rounded-lg hover:opacity-90 transition font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 flex-1 sm:flex-none">
+                            Get In Touch
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+
+                        <!-- Download Resume Button (Theme-Matched) -->
+                        <a href="./Resume/Kushal_FSD_Resume.pdf" download
+                            class="inline-flex items-center justify-center px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary-light dark:border-primary-dark text-primary-light dark:text-primary-dark rounded-lg hover:bg-primary-light/10 dark:hover:bg-primary-dark/10 transition font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 flex-1 sm:flex-none">
+                            Download Resume
+                            <i data-lucide="download" class="w-5 h-5 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="800" class="hidden md:block">
+                    <div class="relative">
+                        <div
+                            class="absolute -top-6 -left-6 w-full h-full rounded-xl bg-primary-light/20 dark:bg-primary-dark/20 animate-pulse">
+                        </div>
+                        <div
+                            class="relative rounded-xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500">
+                            <div class="bg-gray-200 dark:bg-gray-800 p-2 flex items-center">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-gradient-to-br from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark h-80 md:h-96 flex items-center justify-center">
+                                <div class="text-center p-6">
+                                    <div
+                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white dark:border-gray-900 mx-auto mb-6 overflow-hidden">
+                                        <!-- Placeholder for profile image -->
+                                        <!-- <div
+                                            class="w-full h-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                                            <i data-lucide="user"
+                                                class="w-12 h-12 text-gray-500 dark:text-gray-400"></i>
+                                        </div> -->
+                                        <img src="/Images/ProfieOne.jpg" alt="Kushal S Sonkamble"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.parentElement.innerHTML='<i data-lucide=\'user\' class=\'w-16 h-16 text-gray-400 dark:text-gray-500 mx-auto\'></i>'">
+                                    </div>
+                                    <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Kushal S Sonkamble</h3>
+                                    <p class="text-white/80">Full Stack Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-accent-light/20 dark:bg-accent-dark/20 animate-pulse">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <div class="about" id="about">
-        <div class="about-profile-img">
-            <img src="./profile2.jpg" alt="">
-        </div>
-        <div class="about-content">
-            <h1>About <span>Me</span></h1>
-            <p>
-                Welcome to my portfolio! I'm a dedicated and aspiring full-stack developer, currently pursuing my passion for crafting innovative web solutions. With a strong foundation in front-end and back-end technologies, I thrive on building seamless user experiences and transforming complex ideas into functional code. Eager to embrace challenges and always hungry for knowledge, I'm on a mission to evolve and contribute to the ever-changing world of technology. Let's connect and explore the exciting possibilities of web development together!
-            </p>
-            <div class="res-btn">
-                <a class="btn-1">Download CV</a>
-                <a class="btn-1">Another BTN</a>
-            </div>
-        </div>
-    </div>
-    <div class="skills" id="skills">
-        <h1>My Skills</h1>
-        <p>As a passionate full-stack developer student, I have been honing my skills to become a well-rounded tech professional. My expertise encompasses both front-end and back-end technologies, and I am eager to take on new challenges and projects. Here are some of the key skills I bring to the table:</p>
-        <h3>Successfully completed studies in:</h3>
-        <div class="skill-container-one">
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/htmllogo.png" alt="">
-                    <figcaption><h3>HTML</h3></figcaption>
-                </figure>
-            </div>
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/csslogo.png" alt="">
-                    <figcaption><h3>CSS</h3></figcaption>
-                </figure>
-            </div>
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/jslogo.png" alt="">
-                    <figcaption><h3>JavaScript</h3></figcaption>
-                </figure>
-            </div>
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/javalogo.png" alt="">
-                    <figcaption><h3>Java</h3></figcaption>
-                </figure>
-            </div>
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/reactlogo.png" alt="">
-                    <figcaption><h3>React</h3></figcaption>
-                </figure>
-            </div>
-        </div>
-        <hr>
-        <h3>Upcoming topics to cover: </h3>
-        <div class="skill-container-one">
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/Angularlogo.png" alt="">
-                    <figcaption><h3>Angular</h3></figcaption>
-                </figure>
-            </div>
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/nodelogo.png" alt="">
-                    <figcaption><h3>Node Js</h3></figcaption>
-                </figure>
-            </div>
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/mongodblogo.png" alt="">
-                    <figcaption><h3>MongoDB</h3></figcaption>
-                </figure>
-            </div>
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/expresslogo.png" alt="">
-                    <figcaption><h3>ExpressJS</h3></figcaption>
-                </figure>
-            </div>
-            <div class="skill-card">
-                <figure>
-                    <img src="./logos/reduxlogo.png" alt="">
-                    <figcaption><h3>Redux</h3></figcaption>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <div class="projects" id="project">
-        <h1>My Latest Projests</h1>
-        <div class="project-sec">
-            <div class="proj-card">
-                <div class="pro-details one">
-                    <h4>Project Name: Movie Dock</h4>
-                    <hr>
-                    <ul>
-                        <li>HTML/CSS/JavaScript project for a movie dock website</li>
-                        <li>API integration for data retrieval</li>
-                        <li>Movie cards with poster, title, vote count, average count, release date, popularity</li>
-                        <li>Add/remove favorite feature using local storage</li>
-                        <li>Debounced search bar</li>
-                        <li>Sorting buttons for date and rating</li>
-                        <li>Pagination with next/previous buttons</li>
-                    </ul>
-                    <div class="pro-links">
-                        <a href="https://github.com/Kushalprintln/movie_Dock.git" target="_blank"><i class='bx bxl-github' ></i> View Code</a>
-                        <a href="https://movie-dock.vercel.app/" target="_blank"><i class='bx bx-link-alt'></i> Preview Live</a>
-                    </div>
-                </div>
-            </div>
-            <div class="proj-card">
-                <div class="pro-details two">
-                    <h4>My Dictionary Application</h4>
-                    <hr>
-                    <ul>
-                        <li>HTML/CSS/JavaScript dictionary website project</li>
-                        <li>API calls for word definitions</li>
-                        <li>Speak aloud feature for pronunciation</li>
-                        <li>Local storage for the last 10 search words in the history section</li>
-                        <li>Motivational quote above the footer</li>
-                        <li>Quote updates every minute through API and setInterval</li>
-                        <li>Comprehensive functionality for word lookup and user engagement.</li>
-                    </ul>
-                    <div class="pro-links">
-                        <a href="https://github.com/Kushalprintln/dictionary.git" target="_blank"><i class='bx bxl-github' ></i> View Code</a>
-                        <a href="https://dictionary-ivory-kappa.vercel.app/" target="_blank"><i class='bx bx-link-alt'></i> Preview Live</a>
-                    </div>
-                </div>
-            </div>
-            <div class="proj-card">
-                <div class="pro-details three">
-                    <h4>Music By Kushal</h4>
-                    <hr>
-                    <ul>
-                        <li>HTML/CSS/JavaScript music application with a stunning UI design</li>
-                        <li>Music play functionality with play/pause button</li>
-                        <li>Seek bar for dragging to navigate through the song</li>
-                        <li>Download button for songs</li>
-                        <li>Volume control with draggable seek</li>
-                        <li>Lyrics display for the playing song</li>
-                        <li>Integration with Google Drive for music playback</li>
-                        <li>User-friendly features for an immersive music experience.</li>
-                    </ul>
-                    <div class="pro-links">
-                        <a href="https://github.com/Kushalprintln/Music-Application.git" target="_blank"><i class='bx bxl-github' ></i> View Code</a>
-                        <a href="https://music-application-five.vercel.app/" target="_blank"><i class='bx bx-link-alt'></i> Preview Live</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    <div class="contact" id="contact">
-        <div class="contact_container">
-            <h1>Contact Me!</h1>
-            <i class='bx bxs-phone-call'></i>9096233458
-            <br>
-            <i class='bx bxl-gmail' ></i> Kushsonkamble@gmail.com
-            <br>
-            Get in Touch with me 
-            <div class="con-icon">
-                <a href="https://www.linkedin.com/in/kushal-sonkamble-4bb943264/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/Kushalprintln" target="_blank"><i class='bx bxl-github' ></i></a>
-                <a href="" target="_blank"><i class='bx bxl-instagram' ></i></a>
-            </div>
-        </div>
-        <form action="">
-            <input type="text" name="Name" id="" placeholder="Full Name">
-            <br>
-            <input type="email" name="email" id="" placeholder="Email">
-            <br>
-            <input type="tel" name="phone-no" id="" placeholder="Phone No.">
-            <br>
-            <Textarea placeholder="Enter Message"></Textarea>
-            <br>
-            <button type="submit" id="sub-btn">Submit</button>
-        </form>
 
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-32 h-32 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 blur-xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-48 h-48 rounded-full bg-secondary-light/10 dark:bg-secondary-dark/10 blur-xl">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 heading-font" data-aos="fade-up">
+                About <span class="text-primary-light dark:text-primary-dark">Me</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-delay="100">
+                    <div
+                        class="relative rounded-xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 shadow-lg transform hover:-rotate-1 transition duration-500">
+                        <div class="bg-gray-200 dark:bg-gray-800 p-2 flex items-center">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-700 h-80 md:h-96 flex items-center justify-center">
+                            <!-- <div class="text-center p-6">
+                                <i data-lucide="user"
+                                    class="w-16 h-16 text-gray-400 dark:text-gray-500 mx-auto mb-4"></i>
+                                <p class="text-gray-500 dark:text-gray-400">Profile Image</p>
+                            </div> -->
+                            <img src="./Images/AboutPlaceholder.jpg" alt="" class="w-[90%] rounded-xl">
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-6 heading-font">Who am I?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        I'm <span class="font-medium text-primary-light dark:text-primary-dark">Kushal S
+                            Sonkamble</span>, a passionate Full Stack Developer with expertise in modern web
+                        technologies.
+                        I specialize in building responsive, performant, and user-friendly web applications that deliver
+                        exceptional user experiences.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        With a strong foundation in both frontend and backend development, I enjoy the entire process of
+                        turning ideas into reality through code. My approach combines technical expertise with creative
+                        problem-solving to deliver high-quality solutions.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        When I'm not coding, you can find me exploring new technologies, contributing to open-source
+                        projects, or sharing knowledge with the developer community. I'm always eager to learn and
+                        take on new challenges that push me out of my comfort zone.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div
+                            class="flex items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                            <div
+                                class="flex-shrink-0 p-3 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full text-primary-light dark:text-primary-dark">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-500 dark:text-gray-400">Location</h4>
+                                <p class="text-gray-800 dark:text-gray-200">Bengaluru, India</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                            <div
+                                class="flex-shrink-0 p-3 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full text-primary-light dark:text-primary-dark">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-500 dark:text-gray-400">Email</h4>
+                                <p class="text-gray-800 dark:text-gray-200">kushsonkamble@gmail.com</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                            <div
+                                class="flex-shrink-0 p-3 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full text-primary-light dark:text-primary-dark">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-500 dark:text-gray-400">Phone</h4>
+                                <p class="text-gray-800 dark:text-gray-200">+91 9096233458</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
+                            <div
+                                class="flex-shrink-0 p-3 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full text-primary-light dark:text-primary-dark">
+                                <i data-lucide="briefcase" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-500 dark:text-gray-400">Experience</h4>
+                                <p class="text-gray-800 dark:text-gray-200">1+ Years</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div
+            class="absolute top-1/4 right-0 w-64 h-64 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 blur-xl">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 heading-font" data-aos="fade-up">
+                My <span class="text-primary-light dark:text-primary-dark">Experience</span>
+            </h2>
+
+            <div class="relative">
+                <!-- Timeline line -->
+                <div
+                    class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark transform -translate-x-1/2">
+                </div>
+
+                <!-- Experience items -->
+                <div class="space-y-8 md:space-y-16">
+                    <!-- Experience 1 -->
+                    <div class="relative" data-aos="fade-up">
+                        <div class="md:flex items-center w-full">
+                            <div class="md:w-1/2 md:pr-8 md:text-right">
+                                <div class="md:mr-8">
+                                    <h3 class="text-xl md:text-2xl font-semibold heading-font">Xyram Software Solutions
+                                    </h3>
+                                    <p class="text-gray-500 dark:text-gray-400">June 2024 - Present</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block w-16 flex-shrink-0 relative">
+                                <div
+                                    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-primary-light dark:bg-primary-dark border-4 border-white dark:border-gray-900 shadow-lg">
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                                <div
+                                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 md:ml-8 transform hover:-translate-y-2 transition duration-300">
+                                    <h4 class="text-lg md:text-xl font-semibold mb-2 heading-font">Associate Software
+                                        Developer</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                        Developed a real-time Patient Monitoring Dashboard (Lifesigns) displaying live
+                                        patient vitals
+                                        (BP, heart rate, respiratory rate, skin temperature, SpO₂, ECG) with past data
+                                        analysis.
+                                    </p>
+                                    <div class="mb-4">
+                                        <h5
+                                            class="font-medium mb-3 text-primary-light dark:text-primary-dark flex items-center">
+                                            <i data-lucide="award" class="w-4 h-4 mr-2"></i>
+                                            Key Contributions:
+                                        </h5>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-start">
+                                                <i data-lucide="check-circle"
+                                                    class="w-4 h-4 mt-1 mr-2 text-accent-light dark:text-accent-dark flex-shrink-0"></i>
+                                                <span class="text-gray-600 dark:text-gray-300">Designed an optimized
+                                                    dashboard using React.js, MUI, Tailwind CSS, SCSS, and
+                                                    Highcharts</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i data-lucide="check-circle"
+                                                    class="w-4 h-4 mt-1 mr-2 text-accent-light dark:text-accent-dark flex-shrink-0"></i>
+                                                <span class="text-gray-600 dark:text-gray-300">Built reusable atomic
+                                                    components for better maintainability</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i data-lucide="check-circle"
+                                                    class="w-4 h-4 mt-1 mr-2 text-accent-light dark:text-accent-dark flex-shrink-0"></i>
+                                                <span class="text-gray-600 dark:text-gray-300">Integrated Highcharts for
+                                                    live data visualization</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i data-lucide="check-circle"
+                                                    class="w-4 h-4 mt-1 mr-2 text-accent-light dark:text-accent-dark flex-shrink-0"></i>
+                                                <span class="text-gray-600 dark:text-gray-300">Conducted code reviews
+                                                    ensuring high standards</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i data-lucide="check-circle"
+                                                    class="w-4 h-4 mt-1 mr-2 text-accent-light dark:text-accent-dark flex-shrink-0"></i>
+                                                <span class="text-gray-600 dark:text-gray-300">Improved UI
+                                                    responsiveness by 30%</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i data-lucide="check-circle"
+                                                    class="w-4 h-4 mt-1 mr-2 text-accent-light dark:text-accent-dark flex-shrink-0"></i>
+                                                <span class="text-gray-600 dark:text-gray-300">Wrote unit tests with
+                                                    Vitest, reaching 70% coverage</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i data-lucide="check-circle"
+                                                    class="w-4 h-4 mt-1 mr-2 text-accent-light dark:text-accent-dark flex-shrink-0"></i>
+                                                <span class="text-gray-600 dark:text-gray-300">Collaborated with backend
+                                                    teams to resolve API inconsistencies 50% faster</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i data-lucide="check-circle"
+                                                    class="w-4 h-4 mt-1 mr-2 text-accent-light dark:text-accent-dark flex-shrink-0"></i>
+                                                <span class="text-gray-600 dark:text-gray-300">Actively participated in
+                                                    Agile sprint activities and daily standups</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div
+            class="absolute -top-32 -left-32 w-64 h-64 rounded-full bg-secondary-light/10 dark:bg-secondary-dark/10 blur-xl">
+        </div>
+        <div
+            class="absolute -bottom-32 -right-32 w-64 h-64 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 blur-xl">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 heading-font" data-aos="fade-up">
+                My <span class="text-primary-light dark:text-primary-dark">Skills</span>
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Frontend Skills -->
+                <div data-aos="fade-up" data-aos-delay="100"
+                    class="skill-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="p-3 rounded-lg bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark mr-4">
+                            <i data-lucide="layout" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold heading-font">Frontend</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>React.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Next.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div data-aos="fade-up" data-aos-delay="200"
+                    class="skill-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="p-3 rounded-lg bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark mr-4">
+                            <i data-lucide="server" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold heading-font">Backend</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>RESTful APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Skills -->
+                <div data-aos="fade-up" data-aos-delay="300"
+                    class="skill-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="p-3 rounded-lg bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark mr-4">
+                            <i data-lucide="database" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold heading-font">Database</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Others -->
+                <div data-aos="fade-up" data-aos-delay="400"
+                    class="skill-card bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="p-3 rounded-lg bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark mr-4">
+                            <i data-lucide="settings" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold heading-font">Tools & Others</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Git</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Jira</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Vitest</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Code Optimization</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mr-3"></div>
+                            <span>Agile Workflows</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Soft Skills Section -->
+            <div class="mt-12" data-aos="fade-up" data-aos-delay="500">
+                <h3 class="text-2xl font-semibold mb-6 text-center heading-font">
+                    <span class="text-primary-light dark:text-primary-dark">Soft</span> Skills
+                </h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="soft-skill-tag">Problem-solving</span>
+                    <span class="soft-skill-tag">Team Collaboration</span>
+                    <span class="soft-skill-tag">Agile Methodologies</span>
+                    <span class="soft-skill-tag">Communication</span>
+                    <span class="soft-skill-tag">Presentation skills</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div
+            class="absolute top-0 right-0 w-48 h-48 rounded-full bg-secondary-light/10 dark:bg-secondary-dark/10 blur-xl">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 heading-font" data-aos="fade-up">
+                My <span class="text-primary-light dark:text-primary-dark">Projects</span>
+            </h2>
+
+            <div class="mb-16" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold mb-8 text-center heading-font">Professional Project</h3>
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 transform hover:scale-[1.01] transition duration-500">
+                    <div class="md:flex">
+                        <div class="md:w-1/2">
+                            <div class="bg-gray-200 dark:bg-gray-700 p-2 flex items-center">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div
+                                    class="aspect-w-16 aspect-h-9 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden flex items-center justify-center">
+                                    <img src="/Images/Dashboard.png" alt="Patient Monitoring Dashboard Screenshot"
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-6 md:p-8">
+                            <h4 class="text-xl md:text-2xl font-bold mb-4 heading-font">Patient Monitoring Dashboard
+                                (Lifesigns)</h4>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                                Developed a real-time system displaying live patient vitals (BP, heart rate, respiratory
+                                rate,
+                                skin temperature, SpO₂, ECG) with past data analysis capabilities for healthcare
+                                professionals.
+                            </p>
+                            <div class="mb-8">
+                                <h5
+                                    class="font-medium mb-3 text-primary-light dark:text-primary-dark flex items-center">
+                                    <i data-lucide="code" class="w-4 h-4 mr-2"></i>
+                                    Technologies Used:
+                                </h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">React.js</span>
+                                    <span class="tech-tag">MUI</span>
+                                    <span class="tech-tag">Tailwind CSS</span>
+                                    <span class="tech-tag">SCSS</span>
+                                    <span class="tech-tag">Highcharts</span>
+                                    <span class="tech-tag">Vitest</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-gray-600 dark:text-gray-300 flex items-center opacity-80">
+                                    <i data-lucide="lock" class="w-4 h-4 mr-2"></i>
+                                    Proprietary Project
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-8 text-center heading-font" data-aos="fade-up">Personal Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: PG Search App -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gray-200 dark:bg-gray-700 p-2 flex items-center">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div
+                            class="aspect-w-16 aspect-h-9 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden mb-4">
+                            <img src="/Images/PGapp.png" alt="PG Search App Screenshot"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h4 class="text-lg md:text-xl font-bold mb-3 heading-font">PG Search App</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A PG search app built with Next.js and TypeScript. Users can sign in with JWT authentication
+                            and search/filter PGs by location, price, and availability.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">JWT Auth</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://puzzle-pg.vercel.app/" target="_blank"
+                                class="project-btn bg-primary-light dark:bg-primary-dark text-white hover:bg-opacity-90">
+                                <i data-lucide="external-link" class="w-4 h-4 mr-1"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/Kushalprintln/PuzzlePG.git" target="_blank"
+                                class="project-btn border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <i data-lucide="github" class="w-4 h-4 mr-1"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Beyoung E-Commerce -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gray-200 dark:bg-gray-700 p-2 flex items-center">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div
+                            class="aspect-w-16 aspect-h-9 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden mb-4">
+                            <img src="/Images/Beyoung.png" alt="Beyoung E-Commerce Screenshot"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h4 class="text-lg md:text-xl font-bold mb-3 heading-font">Beyoung E-Commerce</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A full-featured e-commerce website with authentication, product listing, sorting, category
+                            filtering, and secure checkout.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">APIs</span>
+                            <span class="tech-tag">Context API</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://beyoung-clone-sooty.vercel.app/" target="_blank"
+                                class="project-btn bg-primary-light dark:bg-primary-dark text-white hover:bg-opacity-90">
+                                <i data-lucide="external-link" class="w-4 h-4 mr-1"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/Kushalprintln/Beyoung-Clone.git" target="_blank"
+                                class="project-btn border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <i data-lucide="github" class="w-4 h-4 mr-1"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Apple Musics -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gray-200 dark:bg-gray-700 p-2 flex items-center">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div
+                            class="aspect-w-16 aspect-h-9 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden mb-4">
+                            <img src="/Images/AppleMusic.png" alt="Apple Musics Screenshot"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h4 class="text-lg md:text-xl font-bold mb-3 heading-font">Apple Musics</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A music streaming app with authentication, playback controls, favorites, song search, and
+                            sorting by mood/artist.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">APIs</span>
+                            <span class="tech-tag">Context API</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://apple-musics.vercel.app/" target="_blank"
+                                class="project-btn bg-primary-light dark:bg-primary-dark text-white hover:bg-opacity-90">
+                                <i data-lucide="external-link" class="w-4 h-4 mr-1"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/Kushalprintln/Apple_Musics.git" target="_blank"
+                                class="project-btn border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <i data-lucide="github" class="w-4 h-4 mr-1"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- See More Projects Button -->
+            <div class="mt-16 text-center" data-aos="fade-up">
+                <a href="https://github.com/Kushalprintln" target="_blank"
+                    class="inline-flex items-center px-6 py-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition font-medium text-gray-800 dark:text-gray-200 shadow hover:shadow-md">
+                    <i data-lucide="github" class="w-5 h-5 mr-2"></i>
+                    See More Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 rounded-full bg-primary-light/10 dark:bg-primary-dark/10 blur-xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-secondary-light/10 dark:bg-secondary-dark/10 blur-xl">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 heading-font" data-aos="fade-up">
+                Get In <span class="text-primary-light dark:text-primary-dark">Touch</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-6 heading-font">Contact Information</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        Feel free to reach out to me for any questions or opportunities. I'm always open to discussing
+                        new projects, creative ideas or opportunities to be part of your vision.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div
+                            class="flex items-start bg-white dark:bg-gray-700 p-5 rounded-xl shadow-sm hover:shadow-md transition">
+                            <div
+                                class="flex-shrink-0 p-3 rounded-lg bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-800 dark:text-gray-200">Email</h4>
+                                <div class="flex items-center mt-1">
+                                    <p class="text-gray-600 dark:text-gray-300">kushsonkamble@gmail.com</p>
+                                    <button id="copy-email"
+                                        class="ml-3 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition"
+                                        title="Copy to clipboard">
+                                        <i data-lucide="copy" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start bg-white dark:bg-gray-700 p-5 rounded-xl shadow-sm hover:shadow-md transition">
+                            <div
+                                class="flex-shrink-0 p-3 rounded-lg bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-800 dark:text-gray-200">Phone</h4>
+                                <div class="flex items-center mt-1">
+                                    <p class="text-gray-600 dark:text-gray-300">+91 9096233458</p>
+                                    <button id="copy-phone"
+                                        class="ml-3 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition"
+                                        title="Copy to clipboard">
+                                        <i data-lucide="copy" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start bg-white dark:bg-gray-700 p-5 rounded-xl shadow-sm hover:shadow-md transition">
+                            <div
+                                class="flex-shrink-0 p-3 rounded-lg bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-gray-800 dark:text-gray-200">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300 mt-1">Bengaluru, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h4 class="font-medium text-lg mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/kushal-sonkamble-4bb943264/" target="_blank"
+                                class="social-btn bg-white dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-gray-600">
+                                <i data-lucide="linkedin" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                            </a>
+                            <a href="https://github.com/Kushalprintln" target="_blank"
+                                class="social-btn bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank"
+                                class="social-btn bg-white dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-gray-600">
+                                <i data-lucide="twitter" class="w-5 h-5 text-blue-400"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank"
+                                class="social-btn bg-white dark:bg-gray-700 hover:bg-pink-50 dark:hover:bg-gray-600">
+                                <i data-lucide="instagram" class="w-5 h-5 text-pink-500"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-6 heading-font">Send Me a Message</h3>
+                    <form id="contact-form" class="space-y-5">
+                        <input type="hidden" name="access_key" value="742022a1-c287-40cf-8b66-90e43ee9570b">
+                        <!-- <input type="hidden" name="redirect" value="https://yourdomain.com/thank-you"> -->
+
+                        <!-- CUSTOMIZE EMAIL CONTENT HERE -->
+                        <input type="hidden" name="subject" value="New message from {name} - {user_subject}">
+                        <input type="hidden" name="from_name" value="Kushal's Portfolio">
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" required class="form-input" placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" name="email" required class="form-input"
+                                placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="form-input"
+                                placeholder="Project Inquiry">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="form-input"
+                                placeholder="Hello Kushal..."></textarea>
+                        </div>
+
+                        <!-- <div class="h-captcha" data-captcha="true"></div> -->
+
+                        <button type="submit" id="submit-btn"
+                            class="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark text-white rounded-lg hover:opacity-90 transition font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-300">
+                            <span id="btn-text">Send Message</span>
+                            <i data-lucide="send" class="w-5 h-5 ml-2 hidden" id="btn-icon"></i>
+                            <svg id="btn-spinner" class="hidden w-5 h-5 ml-2 animate-spin"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 dark:bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#home"
+                        class="text-xl font-bold text-primary-light dark:text-primary-dark heading-font flex items-center">
+                        <span class="bg-primary-light dark:bg-primary-dark w-3 h-3 rounded-full mr-2"></span>
+                        Kushal S Sonkamble
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-300 mt-2">&copy; 2024 All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#experience" class="footer-link">Experience</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-300 dark:border-gray-700 text-center">
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Crafted with <i data-lucide="heart" class="w-4 h-4 inline text-red-500"></i> by Kushal S Sonkamble
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-8 right-8 hidden z-50">
+        <div class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-xl flex items-center animate-slide-in">
+            <i data-lucide="check-circle" class="w-6 h-6 mr-2"></i>
+            <span id="toast-message">Success!</span>
+        </div>
     </div>
 
-    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="https://js.hcaptcha.com/1/api.js" async defer></script> -->
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
+
 </html>

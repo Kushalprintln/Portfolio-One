@@ -1,0 +1,263 @@
+/* styles.css - Updated without @apply directives */
+
+/* Custom animations */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-slow-reverse {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+    animation: spin-slow-reverse 20s linear infinite;
+}
+
+.animate-slide-in {
+    animation: slide-in 0.3s ease-out forwards;
+}
+
+/* Navigation links */
+.nav-link {
+    color: #4f46e5;
+    transition: color 0.3s;
+}
+
+.dark .nav-link {
+    color: #a5b4fc;
+}
+
+.nav-link:hover {
+    color: #6366f1;
+}
+
+.dark .nav-link:hover {
+    color: #818cf8;
+}
+
+/* Social buttons */
+.social-btn {
+    padding: 0.75rem;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    transform: translateY(0);
+}
+
+.social-btn:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.soft-skill-tag {
+    padding: 0.5rem 1rem;
+    background-color: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    transition: background-color 0.3s;
+}
+
+.dark .soft-skill-tag {
+    background-color: rgba(129, 140, 248, 0.1);
+    color: #818cf8;
+    border-color: rgba(129, 140, 248, 0.3);
+}
+
+.soft-skill-tag:hover {
+    background-color: rgba(99, 102, 241, 0.2);
+}
+
+.dark .soft-skill-tag:hover {
+    background-color: rgba(129, 140, 248, 0.2);
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.dark .form-label {
+    color: #d1d5db;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    transition: all 0.3s;
+}
+
+.dark .form-input {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f3f4f6;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.dark .form-input:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.3);
+}
+
+/* Footer links */
+.footer-link {
+    color: #4b5563;
+    transition: color 0.3s;
+}
+
+.dark .footer-link {
+    color: #9ca3af;
+}
+
+.footer-link:hover {
+    color: #6366f1;
+}
+
+.dark .footer-link:hover {
+    color: #818cf8;
+}
+
+/* Tech tags */
+.tech-tag {
+    padding: 0.25rem 0.75rem;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    transition: background-color 0.3s;
+}
+
+.dark .tech-tag {
+    background-color: #374151;
+}
+
+.tech-tag:hover {
+    background-color: #e5e7eb;
+}
+
+.dark .tech-tag:hover {
+    background-color: #4b5563;
+}
+
+/* Project buttons */
+.project-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #818cf8;
+}
+
+/* Form Loading State */
+#submit-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* hCaptcha Container */
+.h-captcha {
+    margin-bottom: 1.5rem;
+}
+
+/* Toast Notifications */
+#toast {
+    transition: all 0.3s ease;
+}
+
+.toast-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.toast-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom responsive adjustments */
+@media (max-width: 768px) {
+    .timeline-line {
+        display: none;
+    }
+
+    .experience-item {
+        flex-direction: column;
+    }
+
+    .experience-date {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+}
