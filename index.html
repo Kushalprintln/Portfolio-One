@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" itemscope itemtype="http://schema.org/Person">
 
 <head>
+    <!-- Primary Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kushal S Sonkamble | Full Stack Developer</title>
-    <meta name="description" content="Professional portfolio of Kushal S Sonkamble, Full Stack Developer">
+    <title>Kushal S Sonkamble | Full Stack Developer | Bengaluru, India</title>
+    <meta name="description" content="Professional portfolio of Kushal S Sonkamble, Full Stack Developer specializing in React, Next.js, and modern web technologies. Based in Bengaluru, India.">
+    <meta name="author" content="Kushal S Sonkamble">
+    
+    <!-- Schema.org markup for Google -->
+    <meta itemprop="name" content="Kushal S Sonkamble | Full Stack Developer">
+    <meta itemprop="description" content="Professional portfolio of Kushal S Sonkamble, Full Stack Developer specializing in React, Next.js, and modern web technologies.">
+    <meta itemprop="image" content="https://kushalsonkamble.vercel.app/Images/ProfieOne.jpg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kushalsonkamble.vercel.app/">
+    <meta property="og:title" content="Kushal S Sonkamble | Full Stack Developer">
+    <meta property="og:description" content="Professional portfolio of Kushal S Sonkamble, Full Stack Developer specializing in React, Next.js, and modern web technologies.">
+    <meta property="og:image" content="https://kushalsonkamble.vercel.app/Images/ProfieOne.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kushalsonkamble.vercel.app/">
+    <meta property="twitter:title" content="Kushal S Sonkamble | Full Stack Developer">
+    <meta property="twitter:description" content="Professional portfolio of Kushal S Sonkamble, Full Stack Developer specializing in React, Next.js, and modern web technologies.">
+    <meta property="twitter:image" content="https://kushalsonkamble.vercel.app/Images/ProfieOne.jpg">
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kushalsonkamble.vercel.app/" />
+    
     <!-- Favicon Links -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text x='50' y='68' font-family='Inter' font-size='60' text-anchor='middle' fill='white'>KS</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text x='50' y='68' font-family='Inter' font-size='60' text-anchor='middle' fill='white'>KS</text></svg>">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://js.hcaptcha.com">
 
     <!-- Tailwind CSS CDN with custom config -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -81,22 +116,56 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kushal S Sonkamble",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://kushalsonkamble.vercel.app",
+      "sameAs": [
+        "https://www.linkedin.com/in/kushal-sonkamble-4bb943264/",
+        "https://github.com/Kushalprintln"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "addressCountry": "India"
+      },
+      "email": "mailto:kushsonkamble@gmail.com",
+      "telephone": "+91-9096233458",
+      "description": "Professional Full Stack Developer specializing in React, Next.js, and modern web technologies.",
+      "image": "https://kushalsonkamble.vercel.app/Images/ProfieOne.jpg"
+    }
+    </script>
 
     <style>
         html {
             font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
 
         .heading-font {
             font-family: 'Playfair Display', serif;
         }
+        
+        /* Critical CSS for above-the-fold content */
+        .hero-content {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
+
 
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
     <!-- Navigation -->
@@ -960,7 +1029,7 @@
                     <h3 class="text-2xl md:text-3xl font-semibold mb-6 heading-font">Send Me a Message</h3>
                     <form id="contact-form" class="space-y-5">
                         <input type="hidden" name="access_key" value="742022a1-c287-40cf-8b66-90e43ee9570b">
-                        <!-- <input type="hidden" name="redirect" value="https://yourdomain.com/thank-you"> -->
+                        <!-- <input type="hidden" name="redirect" value="https://kushalsonkamble.vercel.app/thank-you"> -->
 
                         <!-- CUSTOMIZE EMAIL CONTENT HERE -->
                         <input type="hidden" name="subject" value="New message from {name} - {user_subject}">
